@@ -7,16 +7,27 @@ namespace XD3D
 {
 	class DeviceSetting final
 	{
+		friend class Context;
 		DeviceSetting() = delete;
 	public:
-		DeviceSetting(GUID FactoryFlags, UINT FeatureLevel);
+		DeviceSetting(UINT FeatureLevel);
 	private:
 		void GetFactory();
+		void CreateAdapter();
+		void CreateDevice();
 	private:
 		GUID DXGIFactoryFlags;
 		UINT FeatureLevel;
-		IDXGIFactory* pFactory = 0;
-		IDXGIAdapter* pAdater = 0;
+#if defined(_DirectX12_) || defined(_DirectX11_) || defined(_DirectX10_)
+		Microsoft::WRL::ComPtr<IDXGIFactory> pFactory = 0;
+		Microsoft::WRL::ComPtr<IDXGIAdapter> pAdater = 0;
+#elif defined(_DirectX12_1_) || defined(_DirectX11_1_) || defined(_DirectX10_1_)
+		Microsoft::WRL::ComPtr<IDXGIFactory1> pFactory1 = 0;
+		Microsoft::WRL::ComPtr<IDXGIAdapter1> pAdater1 = 0;
+#else
+		Microsoft::WRL::ComPtr<IDirect3D9> D3d9 = 0;
+		D3DCAPS9 Caps;
+#endif //version define
 	};
 }
 
