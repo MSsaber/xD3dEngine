@@ -43,7 +43,7 @@ namespace XD3D
 		}
 
 		bool operator==(const ReferencePtr& other) const { return Reference == other.Reference; }
-		bool operator==(_Ref* p) const { return Reference == p; }bool operator==(const ReferencePtr& other) const { return Reference == other.Reference; }
+		bool operator==(_Ref* p) const { return Reference == p; }
 		bool operator!=(const ReferencePtr& other) const { return Reference != other.Reference; }
 		bool operator!=(_Ref* p) const { return Reference != p; }
 
