@@ -19,7 +19,6 @@ namespace XD3D
 		void UnLock();
 	protected:
 		Counter();
-	private:
 		virtual ~Counter() = default;
 
 		std::mutex RefMutex;
