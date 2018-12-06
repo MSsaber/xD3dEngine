@@ -5,7 +5,7 @@
 
 namespace XD3D
 {
-	void Context::CreateD3dObject(Context* context, unsigned int version)
+	Context*  Context::CreateD3dObject(Context* context, unsigned int version)
 	{
 		//Create device Information
 #	ifdef _DirectX12_
@@ -17,6 +17,6 @@ namespace XD3D
 #	else
 		int i = 0;
 #	endif
-
+		return nullptr;
 	}
 }

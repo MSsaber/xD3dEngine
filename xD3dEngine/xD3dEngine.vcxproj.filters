@@ -19,6 +19,9 @@
     <Filter Include="Core">
       <UniqueIdentifier>{14bdba42-c4cf-4a39-8ff5-6a8c73bd02a1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Support">
+      <UniqueIdentifier>{5af9d7c9-42da-462f-8b88-30bf9ff3c998}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -39,6 +42,15 @@
     <ClInclude Include="Core\DeviceSetting.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="Core\DeviceInfo.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Support\Counter.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Support\ReferencePtr.h">
+      <Filter>Support</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -58,6 +70,9 @@
     </ClCompile>
     <ClCompile Include="Core\DeviceSetting.cpp">
       <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Support\Counter.cpp">
+      <Filter>Support</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

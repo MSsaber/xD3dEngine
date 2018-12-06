@@ -11,7 +11,7 @@ namespace XD3D
 		Context();
 		~Context();
 	public:
-		static void CreateD3dObject(Context* context,unsigned int version);
+		static Context*  CreateD3dObject(Context* context,unsigned int version);
 	private:
 #   ifdef _DirectX12_
 		Microsoft::WRL::ComPtr <ID3D12Device> Device = 0;

@@ -11,10 +11,21 @@ namespace XD3D
 		DeviceSetting() = delete;
 	public:
 		DeviceSetting(UINT FeatureLevel);
+	public:
+
+#	if defined(_DirectX12_) || defined(_DirectX12_1_)
+		static bool CreateDevice(Context* ct);
+#	elif defined(_DirectX11_) || defined(_DirectX11_1_)
+		static bool CreateDevice(Context* ct);
+#	elif defined(_DirectX10_) || defined(_DirectX10_1_)
+		static bool CreateDevice(Context* ct);
+#	else
+		static bool CreateDevice(Context* ct, _D3DDEVTYPE DeviceType);
+#	endif
+
 	private:
 		void GetFactory();
 		void CreateAdapter();
-		void CreateDevice();
 	private:
 		GUID DXGIFactoryFlags;
 		UINT FeatureLevel;
@@ -27,6 +38,7 @@ namespace XD3D
 #else
 		Microsoft::WRL::ComPtr<IDirect3D9> D3d9 = 0;
 		D3DCAPS9 Caps;
+		int vp;
 #endif //version define
 	};
 }

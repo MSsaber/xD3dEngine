@@ -20,6 +20,11 @@ namespace XD3D
 			CreateDXGIFactory(DXGIFactoryFlags, (void**)&pFactory);
 #else
 			D3d9 = Direct3DCreate9(D3D_SDK_VERSION);
+			//D3d9->GetDeviceCaps(D3DADAPTER_DEFAULT, deviceType, &caps);
+			//if (Caps.DevCaps & D3DDEVCAPS_HWTRANSFORMANDLIGHT)
+			//	vp = D3DCREATE_HARDWARE_VERTEXPROCESSING;
+			//else
+			//	vp = D3DCREATE_SOFTWARE_VERTEXPROCESSING;
 #endif //! version define
 		}
 	}
@@ -87,8 +92,8 @@ namespace XD3D
 #endif //! version define
 	}
 
-	void DeviceSetting::CreateDevice()
+	bool DeviceSetting::CreateDevice(Context* ct, _D3DDEVTYPE DeviceType)
 	{
-
+		return false;
 	}
 }
