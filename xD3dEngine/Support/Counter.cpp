@@ -6,7 +6,7 @@ namespace XD3D
 {
 	Counter::Counter()
 	{
-		ReferenceCount = 1;
+		ReferenceCount = 0;
 	}
 
 	void Counter::Ref()
@@ -20,6 +20,7 @@ namespace XD3D
 		if (!ReferenceCount)
 		{
 			delete this;
+			ReferenceCount = 0;
 		}
 		return ReferenceCount;
 	}

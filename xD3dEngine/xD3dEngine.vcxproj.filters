@@ -22,6 +22,9 @@
     <Filter Include="Support">
       <UniqueIdentifier>{5af9d7c9-42da-462f-8b88-30bf9ff3c998}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{8decce30-8971-4b88-9d02-9ce15d05e9a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -51,6 +54,27 @@
     <ClInclude Include="Support\ReferencePtr.h">
       <Filter>Support</Filter>
     </ClInclude>
+    <ClInclude Include="Element\DElement.h">
+      <Filter>Element</Filter>
+    </ClInclude>
+    <ClInclude Include="D3dEngineMacro.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="D3dEngineLib.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Support\UserData.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\AryI2.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Array.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Aryf2.h">
+      <Filter>Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -73,6 +97,9 @@
     </ClCompile>
     <ClCompile Include="Support\Counter.cpp">
       <Filter>Support</Filter>
+    </ClCompile>
+    <ClCompile Include="Element\DElement.cpp">
+      <Filter>Element</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

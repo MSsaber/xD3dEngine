@@ -8,7 +8,7 @@
 
 namespace XD3D
 {
-	class Counter : public XFRAME::Object
+	class xd3dengine_api Counter : public XFRAME::Object
 	{
 
 	public:

@@ -74,6 +74,7 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>D:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
     <LibraryPath>D:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+    <TargetName>$(ProjectName)_D</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -154,17 +155,25 @@
     <ClInclude Include="Core\Context.h" />
     <ClInclude Include="Core\DeviceInfo.h" />
     <ClInclude Include="Core\DeviceSetting.h" />
+    <ClInclude Include="D3dEngineLib.h" />
+    <ClInclude Include="D3dEngineMacro.h" />
     <ClInclude Include="D3DirectXInc.h" />
     <ClInclude Include="Element\Darwable.h" />
+    <ClInclude Include="Element\DElement.h" />
+    <ClInclude Include="Math\Aryf2.h" />
+    <ClInclude Include="Math\AryI2.h" />
+    <ClInclude Include="Math\Array.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Support\Counter.h" />
     <ClInclude Include="Support\ReferencePtr.h" />
+    <ClInclude Include="Support\UserData.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Context.cpp" />
     <ClCompile Include="Core\DeviceSetting.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Element\DElement.cpp" />
     <ClCompile Include="Element\Drawable.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -1,20 +1,20 @@
 #ifndef _DRAWABLE_H_
 #define _DRAWABLE_H_
 
-#include "frameDLL/XFrameMacro.h"
-#include "frameDLL/XFrameLib.h"
-#include "frameDLL/DataCenter/xfObject.h"
+#include "DElement.h"
 
 namespace XD3D
 {
-	class Drawable : public XFRAME::Object
+	class Context;
+	class xd3dengine_api Drawable : public DElement
 	{
 	public:
 		Drawable();
-		virtual ~Drawable();
+		
 	public:
-		virtual void ElementDrawing(){}
-
+		virtual void ElementDrawing(Context* context){}
+	protected:
+		virtual ~Drawable();
 	private:
 
 	};

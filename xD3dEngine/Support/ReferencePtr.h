@@ -8,10 +8,10 @@ namespace XD3D
 	{
 	public:
 		ReferencePtr() = default;
-		ReferencePtr(const ReferencePtr& other){ other.Reference->Ref(); Reference = other.Reference; }
+		ReferencePtr(const ReferencePtr& other){ if(other->Reference) other.Reference->Ref(); Reference = other.Reference; }
 		ReferencePtr(ReferencePtr&& other){ Reference = other.Reference; }
-		ReferencePtr(_Ref* p) { p->Ref(); Reference = p; }
-		~ReferencePtr() { Reference->UnRef(); }
+		ReferencePtr(_Ref* p) { Reference = p;if(p) p->Ref(); }
+		~ReferencePtr() { if (Reference) Reference->UnRef(); }
 
 	public:
 		_Ref* operator->() const{
@@ -22,13 +22,13 @@ namespace XD3D
 			return *this->Reference;
 		}
 
-		ReferencePtr& operator=(const ReferencePtr& other) const{
+		ReferencePtr& operator=(const ReferencePtr& other){
 			other.Reference->Ref();
 			this->Reference = other.Reference;
 			return *this;
 		}
 
-		ReferencePtr& operator(_Ref* p) const {
+		ReferencePtr& operator=(_Ref* p){
 			if (p == Reference){
 				return *this;
 			}
